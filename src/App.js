@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Canvas } from "@react-three/fiber";
+import Cylinder3d from "./component/Cylinder3d";
+ 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section className='App-header'>
+        <Canvas>
+          <pointLight position={[10, 10, 10]} />
+          <ambientLight />
+          <Cylinder3d position={[-1.2, 0, 0]} />
+          <Cylinder3d position={[1.2, 0, 0]} />
+        </Canvas>
+      </section>
+    </>
   );
 }
-
+ 
 export default App;
